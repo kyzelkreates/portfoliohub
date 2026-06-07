@@ -1,130 +1,114 @@
-// 4P3X Verse™ Portfolio Hub — app.js
+// 4P3X Verse™ — Portfolio Hub App
 // Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™
-// SSOT: config/products.js — do not duplicate product data here.
+// Reads from FOURP3X_PRODUCTS (config/products.js) — single source of truth
 
-(function () {
-  'use strict';
+document.addEventListener('DOMContentLoaded', () => {
 
-  const products = window.FOURP3X_PRODUCTS || [];
-  const grid = document.querySelector('#productGrid');
-  const searchInput = document.querySelector('#productSearch');
-  const agentOutput = document.querySelector('#agentOutput');
+  // ── PRODUCT GRID ──────────────────────────────────────────
+  const grid   = document.getElementById('productGrid');
+  const search = document.getElementById('productSearch');
 
-  // ── Product card markup ──────────────────────────────────────────────────
-  function productMarkup(product) {
-    const tags = product.tags
-      .map(tag => `<span class="tag">${escapeHtml(tag)}</span>`)
-      .join('');
+  function buildCard(p) {
+    const screenshotHTML = `
+      <div class="product-card-thumb">
+        <img
+          src="${p.screenshot}"
+          alt="Screenshot of ${p.name} homepage"
+          loading="lazy"
+          onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:#6a7282;font-size:.78rem;padding:1rem;text-align:center;\'>Screenshot pending — live product available via the button below</div>'"
+        />
+        <span class="live-badge" aria-label="Live deployed product">● Live</span>
+      </div>`;
 
-    return `
-      <article class="product-card">
-        <header>
-          <h3>${escapeHtml(product.name)}</h3>
-          <span class="badge">${escapeHtml(product.badge)}</span>
-        </header>
-        <p>${escapeHtml(product.summary)}</p>
-        <dl>
-          <div>
-            <dt>Sector</dt>
-            <dd>${escapeHtml(product.sector)}</dd>
-          </div>
-          <div>
-            <dt>Who needs it</dt>
-            <dd>${escapeHtml(product.users)}</dd>
-          </div>
-          <div>
-            <dt>Architecture proof</dt>
-            <dd>${escapeHtml(product.proof)}</dd>
-          </div>
-          <div>
-            <dt>Demo-to-live pathway</dt>
-            <dd>${escapeHtml(product.liveReady)}</dd>
-          </div>
-        </dl>
-        <div class="tag-list" aria-label="Product tags">${tags}</div>
-        <a
-          class="button secondary card-link"
-          href="${escapeAttr(product.url)}"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open deployed demo for ${escapeAttr(product.name)}"
-        >Open deployed demo ↗</a>
-      </article>
-    `;
-  }
+    const card = document.createElement('article');
+    card.className = 'product-card';
+    card.dataset.search = [p.name, p.sector, p.shortDescription, ...(p.tags || [])].join(' ').toLowerCase();
 
-  function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
-
-  function escapeAttr(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
-  }
-
-  // ── Render products ──────────────────────────────────────────────────────
-  function renderProducts(filter) {
-    if (!grid) return;
-    const query = (filter || '').trim().toLowerCase();
-    const filtered = query
-      ? products.filter(p => JSON.stringify(p).toLowerCase().includes(query))
-      : products;
-
-    if (filtered.length) {
-      grid.innerHTML = filtered.map(productMarkup).join('');
-    } else {
-      grid.innerHTML = `
-        <div class="empty-state">
-          <h3 style="margin-bottom:0.6rem;">No matches found</h3>
-          <p>Try searching for: dashboard, PWA, compliance, training, welfare, routing, care, career, wellbeing, or reputation.</p>
+    card.innerHTML = `
+      ${screenshotHTML}
+      <div class="product-card-body">
+        <p class="sector-tag">${p.sector}</p>
+        <h3>${p.name}</h3>
+        <p>${p.shortDescription}</p>
+        <div class="card-actions">
+          <a class="button ghost"   href="products/${p.slug}.html">View Case Study</a>
+          <a class="button live"    href="${p.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${p.name} live product in new tab">Open Live ↗</a>
         </div>
-      `;
+      </div>`;
+    return card;
+  }
+
+  function renderGrid(query) {
+    if (!grid) return;
+    grid.innerHTML = '';
+    const q = (query || '').toLowerCase().trim();
+    const products = window.FOURP3X_PRODUCTS || [];
+    let visible = 0;
+    products.forEach(p => {
+      if (!q || p.dataset?.search.includes(q) || [p.name, p.sector, p.shortDescription, ...(p.tags||[])].join(' ').toLowerCase().includes(q)) {
+        grid.appendChild(buildCard(p));
+        visible++;
+      }
+    });
+    if (visible === 0) {
+      grid.innerHTML = '<p style="color:var(--muted);font-size:.9rem;">No products match your search. Try a different term.</p>';
     }
   }
 
-  // ── AI Explainer answers ─────────────────────────────────────────────────
-  const answers = {
-    what: "The 4P3X Verse™ is a connected modular AI-assisted product ecosystem. Instead of treating each app as a separate one-off build, it shows how one reusable architecture can be refactored into many sector-ready products — each with its own identity, user flows, data model, and demo-to-live pathway. The same base runs therapy coordination, fleet routing, career support, employee training, community response, wellbeing, LMS course delivery, crypto compliance, and reputation monitoring. One structure. Many transformations.",
+  if (grid) {
+    renderGrid('');
+    if (search) {
+      let debounce;
+      search.addEventListener('input', () => {
+        clearTimeout(debounce);
+        debounce = setTimeout(() => renderGrid(search.value), 180);
+      });
+    }
+  }
 
-    demo: "Demo Mode shows the product using safe demonstration data and locally configured flows — no real users, no live backend, no persistent records. Everything visible is exactly how the live product would behave, just running on simulated data. Live Mode runs the product by turning demo off, connecting a real backend such as Supabase, Firebase, or a REST API, then enabling real authentication, persistent records, organisation-specific configuration, real-time sync, and production reporting. The pathway from Demo to Live is an engineering decision, not a design one.",
+  // ── AI EXPLAINER ──────────────────────────────────────────
+  const agentOutput  = document.getElementById('agentOutput');
+  const agentButtons = document.querySelectorAll('.agent-buttons button');
 
-    skills: "This portfolio proves: systems thinking and modular architecture planning, AI-assisted development and structured prompting, dashboard and PWA product design, rapid learning across sectors and technology stacks, safety-aware product thinking (compliance, welfare, legal routing), demo/live mode separation and deployment awareness, refactoring discipline without full rebuilds, data model design and backend-ready planning, and the ability to turn ideas into working product demos across healthcare, logistics, finance, education, wellbeing, and more.",
+  const ANSWERS = {
+    what: `The 4P3X Verse™ is a first-of-its-kind modular AI-assisted product ecosystem — one reusable software base, refactored and adapted into many sector-specific working products. It is not a collection of random apps. Every product in the portfolio — from TherapyLink™ to Fleet OS to Quantum Compliance OS™ — shares the same underlying architecture, transformed through controlled refactoring into different sectors. Powered by 4P3X Intelligent AI™. Created by Kyzel Kreates™.`,
 
-    investors: "Investors, employers, funders, and partners should care because this ecosystem demonstrates repeatable product creation — not a single isolated app. The same base can be adapted into multiple markets, branded for different organisations, connected to real backends, and developed into fundable or deployable products with focused finishing work. It shows a creator who can think at system level, execute at product level, and explain it clearly to any audience. One architecture. Hundreds of possible product directions. Proven across ten deployed demos.",
+    demo: `Demo Mode shows the product. Live Mode runs the product. This is a core principle of the 4P3X engineering approach. In Demo Mode, every product runs with sample data locally — no backend, no account, no friction. In Live Mode, the same product connects to real authentication, persistent storage, real users, and real-time sync — activating Supabase, Firebase, REST, or another backend provider. The same codebase. The same UX. Real data instead of sample data.`,
 
-    architecture: "The 4P3X Verse™ is built on three layers. Layer One is the reusable base: a shared dashboard and PWA shell, modular configuration, data model patterns, demo/live mode switching, AI guidance zones, and backend-ready planning. Layer Two is working products: the base refactored with sector-specific identity, user flows, compliance logic, and demo data. Layer Three is future sector variants: the same products connected to real backends, real users, real authentication, and real-time sync. Each refactoring run is controlled and safe — no full rebuilds, no starting from zero.",
+    skills: `The 4P3X Verse™ proves: systems architecture thinking, modular software design, reusable base engineering, AI guidance layer integration, multi-sector product development, safety-aware design in regulated markets, dashboard/PWA workflow architecture, demo-to-live deployment planning, frontend engineering (HTML/CSS/JS), product thinking, user experience design, and the ability to deliver 11 working deployed products from one foundation. For any employer or investor — that's a remarkably broad, practical, and provable skill set.`,
 
-    ai: "4P3X Intelligent AI™ is the AI-assisted guidance and product thinking layer that powers the 4P3X Verse™ ecosystem. It provides structured prompting, decision support, architecture planning, product refinement, and portfolio explanation across all 4P3X products. In this portfolio hub, it powers the explainer panel. In a full Base44 deployment, it can be upgraded to a live agent that answers questions about architecture, generates investor summaries, exports portfolio PDFs, and provides real-time product guidance."
+    investors: `The 4P3X Verse™ is investor-relevant for three reasons. First, it demonstrates a repeatable product creation model — one base, many sector products, faster time-to-market than custom builds. Second, it shows 11 active product demos across healthcare, logistics, education, compliance, wellbeing, and more — multiple commercial sectors proven with the same underlying architecture. Third, it shows demo-to-live deployment pathways — each product has a clear route from working demo to real product with real users. One codebase. Many directions. Ready to scale.`,
+
+    architecture: `The 4P3X architecture operates on three layers. Layer One is the reusable base: shared dashboard/PWA shell, modular config system, data model patterns, demo/live switching, AI guidance zones, and backend-ready structure. Layer Two is sector products: the base is refactored with sector identity, user-specific flows, compliance-aware logic, and demo data — creating a working product demo for a specific sector. Layer Three is live variants: demo mode off, backend connected, real users, real data, real sync — the same product running for real organisations. One base. Three layers. Unlimited product directions.`,
+
+    ai: `4P3X Intelligent AI™ is the AI guidance architecture embedded throughout the 4P3X Verse™ ecosystem. It provides structured AI assistance within each product — flagging risks, supporting decisions, guiding users, and adding intelligent oversight to human-driven workflows. It is not a generic chatbot layer. Each product's AI guidance is configured for its specific sector, user type, and workflow — fleet safety awareness in the Fleet OS, recovery guidance in Recharge Burnout Recovery™, compliance advisory in Quantum Compliance OS™. Intelligence that fits the product, not a one-size-fits-all solution.`
   };
 
-  // ── Event listeners ──────────────────────────────────────────────────────
-  document.addEventListener('click', function (event) {
-    const button = event.target.closest('[data-question]');
-    if (!button || !agentOutput) return;
-
-    const key = button.dataset.question;
-    const response = answers[key] || answers.what;
-
-    agentOutput.style.opacity = '0';
-    setTimeout(function () {
-      agentOutput.textContent = response;
-      agentOutput.style.opacity = '1';
-    }, 120);
-  });
-
-  if (searchInput) {
-    searchInput.addEventListener('input', function (event) {
-      renderProducts(event.target.value);
+  if (agentButtons.length && agentOutput) {
+    agentButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.question;
+        agentOutput.textContent = '';
+        agentOutput.style.color = 'var(--silver)';
+        const text = ANSWERS[key] || 'Response not found.';
+        // Typewriter effect
+        let i = 0;
+        const interval = setInterval(() => {
+          agentOutput.textContent += text[i];
+          i++;
+          if (i >= text.length) clearInterval(interval);
+        }, 14);
+      });
     });
   }
 
-  // ── Init ─────────────────────────────────────────────────────────────────
-  renderProducts();
+  // ── ACTIVE NAV ────────────────────────────────────────────
+  const currentPath = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.site-header nav a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href && href.includes(currentPath) && currentPath !== '') {
+      a.style.color = 'var(--gold)';
+    }
+  });
 
-})();
+});
