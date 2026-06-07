@@ -189,7 +189,7 @@ It provides structured AI assistance within each product — flagging risks, sup
 
 It is not a generic chatbot layer. Each product's AI guidance is configured for its specific sector, user type, and workflow context.
 
-Fleet safety awareness in the Fleet OS. Recovery guidance in Recharge Burnout Recovery™. Compliance advisory in Quantum Compliance OS™. Career navigation in CareerLink OS™.
+Fleet safety awareness in the Fleet OS. Recovery guidance in Burnout Recovery OS™. Compliance advisory in Quantum Compliance OS™. Career navigation in CareerLink OS™.
 
 Intelligence that fits the product — not a one-size-fits-all solution.`
   };
