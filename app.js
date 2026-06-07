@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function makeThumb(p) {
     // Returns HTML string for card thumbnail
-    const fallback = `<div class="thumb-placeholder">📸 Live product available via the button below</div>`;
     return `
       <div class="product-card-thumb" aria-hidden="true">
         <img
@@ -56,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
           alt="Screenshot of ${p.name} homepage"
           loading="lazy"
           width="320" height="180"
-          onerror="this.style.display='none';this.insertAdjacentHTML('afterend','${fallback.replace(/'/g, "\\'").replace(/\n/g,'')}')"
         />
         <span class="live-badge" aria-label="Live deployed product">● Live</span>
       </div>`;
