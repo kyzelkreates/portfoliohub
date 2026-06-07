@@ -1,0 +1,216 @@
+⛔ STRICT BASE44 / MANUS / SUPER AGENT ENFORCEMENT RULES — READ FIRST
+
+MODE:
+FIX-ONLY BUILD COMPILER MODE
+4P3X VERSE™ PORTFOLIO HUB FINISHING + POLISH ONLY
+NO FULL REBUILD
+NO DESTRUCTIVE REFACTOR
+NO FEATURE DRIFT
+NO DUPLICATE ROUTES
+NO DUPLICATE PRODUCT DATA
+NO BREAKING EXISTING STATIC SITE
+NO BREAKING PRODUCT LINKS
+NO BREAKING MOBILE RESPONSIVENESS
+NO HARD-CODED SECRETS
+NO BACKEND-ONLY SECRETS IN FRONTEND
+NO FAKE COMPLETION CLAIMS
+NO GITHUB PUSH UNTIL VALIDATION PASSES
+
+PROJECT:
+4P3X Verse™ — One Modular Architecture. Many AI-Powered Products.
+Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™
+
+MISSION:
+Import this existing static starter pack and turn it into a polished, investor/employer/funder-ready 4P3X Verse™ Portfolio Hub without breaking the existing structure.
+
+The portfolio must explain that the 4P3X Verse™ is one reusable modular AI-assisted product architecture that has been refactored into many working deployed product demos. The site must clearly show:
+
+1. What the 4P3X Verse™ is.
+2. Why it matters.
+3. How the reusable base architecture works.
+4. The three-layer model: base system → working products → future sector variants.
+5. Demo Mode shows the product. Live Mode runs the product.
+6. Current deployed product cards and live links.
+7. How each product proves a different sector transformation.
+8. The onboard 4P3X Intelligent AI™ portfolio explainer concept.
+9. Investor, employer, funder, partner, and client relevance.
+10. Ciaran / Kyzel Kreates™ rapid learning, systems thinking, modular architecture, and AI-assisted engineering positioning.
+
+FILES / STRUCTURE PROVIDED:
+/index.html
+/styles.css
+/app.js
+/config/products.js
+/docs/BASE44_HANDOFF_PROMPT.txt
+/docs/QA_CHECKLIST.txt
+/README.md
+
+SINGLE SOURCE OF PRODUCT TRUTH:
+/config/products.js
+
+All product cards, product descriptions, URLs, tags, sectors, and product metadata must remain driven from config/products.js or an equivalent single product config if Base44 converts the project into components.
+
+DO NOT:
+- Do not hardcode product cards manually in multiple places.
+- Do not duplicate the product list into separate files.
+- Do not remove deployed links.
+- Do not remove the architecture explanation.
+- Do not remove demo/live mode explanation.
+- Do not remove “Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™”.
+- Do not write “Kyzel Kreates” without ™ in branding areas.
+- Do not claim features are live if they are only demo/backend-ready.
+- Do not claim “world’s first” unless verified.
+- Do not add secret keys, backend-only tokens, API keys, service role keys, OpenAI keys, Groq keys, Stripe secret keys, DATABASE_URL, JWT_SECRET, PRIVATE_KEY, WEBHOOK_SECRET, or admin tokens into public/frontend code.
+
+REQUIRED BRANDING:
+Use this exact positioning where relevant:
+
+4P3X Verse™ — One Modular Architecture. Many AI-Powered Products.
+Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™
+
+REQUIRED SAFE POSITIONING:
+Use confident but safe wording:
+- “A first-of-its-kind modular AI-assisted product architecture.”
+- “One Base Architecture. Hundreds of Possible Product Directions.”
+- “Demo Mode shows the product. Live Mode runs the product.”
+- “The 4P3X Verse™ demonstrates one reusable modular software base that can be adapted into many different sector-specific products.”
+
+Avoid arrogant or unverifiable wording:
+- Do not say “nothing like this exists anywhere” unless independently verified.
+- Do not say “world’s first” unless independently verified.
+- Do not present demo features as live operational systems.
+
+REQUIRED PAGES / SECTIONS:
+Preserve or improve these sections:
+
+1. HERO / HOME
+- Explain the 4P3X Verse™ in plain language.
+- Include primary CTA to product showcase.
+- Include secondary CTA to architecture explainer.
+- Include proof strip: deployed products, reusable base, demo/live pathway, PWA-first workflows.
+
+2. ARCHITECTURE EXPLAINER
+Must show:
+Base system → controlled refactoring → live-ready pathway.
+Explain dashboard/PWA shell, modular config, data model patterns, AI guidance, reporting zones, and backend-ready planning.
+
+3. THINKING PROCESS / CREATOR POSITIONING
+Include polished wording:
+“My process is modular, systems-led, and future-focused. I look beyond a single app or feature and ask what reusable structure sits underneath it: who uses it, how the data moves, what decisions need support, where risks appear, and how the same base can scale into different sectors.”
+
+4. PRODUCT SHOWCASE GRID
+Cards must include:
+- product name
+- sector
+- summary
+- who needs it
+- architecture proof
+- demo-to-live pathway
+- tags
+- deployed demo link
+
+5. AI PORTFOLIO EXPLAINER SECTION
+Start with the existing lightweight panel, but make it look premium.
+If upgrading to a real AI agent, it must be portfolio-native, not a generic chatbot.
+It should answer questions about:
+- what the 4P3X Verse™ is
+- each product purpose
+- base architecture
+- dashboard/PWA logic
+- demo/live mode
+- backend-ready setup
+- AI guidance layers
+- skills demonstrated
+- investor/employer/funder relevance
+
+6. BASE44 / NEXT STEPS SECTION
+Explain that this can be expanded into a full live portfolio with product pages, AI agent, backend, PDF exports, contact capture, CV download, and investor pack.
+
+UI / VISUAL REQUIREMENTS:
+- Futuristic black background.
+- Metallic gold, metallic silver, green, purple, and complementary accent colours.
+- Premium cards with aligned text.
+- Mobile-first responsive layout.
+- Strong spacing, readable text, clean hierarchy.
+- No text overflow.
+- No uneven product card chaos.
+- Works on mobile, tablet, laptop, desktop, and large desktop.
+- Accessible contrast and keyboard navigation.
+
+FUNCTIONAL REQUIREMENTS:
+- Product search/filter must keep working.
+- Product cards must render from config/products.js or converted product config.
+- All deployed product links must open correctly.
+- Internal section links must scroll correctly.
+- AI explainer panel must work or be replaced by a safe portfolio-native implementation.
+- The site must not require authentication to view the portfolio.
+- The site must not send users to login/auth unexpectedly.
+
+OPTIONAL SAFE UPGRADES ONLY AFTER CORE VALIDATION:
+- Add product detail pages.
+- Add printable investor summary page.
+- Add CV/portfolio wording page.
+- Add downloadable PDF export later, if properly implemented.
+- Add contact/inquiry section.
+- Add real AI agent only if API config guard and backend-safe design are included.
+
+4P3X API CONFIG GUARD™:
+If adding live APIs or AI provider setup:
+- Use .env.example only.
+- Public/client-safe keys only in frontend.
+- Backend-only secrets must never be exposed, guessed, hardcoded, committed, logged, exported, or placed in frontend code.
+- Mask configured keys in UI.
+- Disable dependent features safely when keys are missing.
+- Block these from public/frontend code:
+SUPABASE_SERVICE_ROLE_KEY, OPENAI_API_KEY, GROQ_API_KEY, STRIPE_SECRET_KEY, DATABASE_URL, JWT_SECRET, PRIVATE_KEY, WEBHOOK_SECRET, admin tokens, backend-only secrets.
+
+VALIDATION BEFORE EDITING:
+1. Inspect existing files.
+2. Confirm index.html, styles.css, app.js, and config/products.js are present.
+3. Confirm product data loads.
+4. Confirm product cards render.
+5. Confirm search works.
+6. Confirm links open.
+7. Confirm mobile layout is usable before changes.
+
+VALIDATION AFTER EDITING:
+1. Run local preview.
+2. Check browser console for errors.
+3. Test product search.
+4. Test all deployed product links.
+5. Test internal anchors.
+6. Test AI explainer buttons or replacement agent.
+7. Test 320px, 375px, 390px, 414px, 768px, 1024px, 1280px, 1440px, and 1920px widths.
+8. Confirm no text escapes boxes.
+9. Confirm all cards align and remain readable.
+10. Confirm no auth wall appears.
+11. Confirm no fake backend/live claims.
+12. Confirm all branding includes ™ where required.
+
+ROLLBACK INSTRUCTIONS:
+If a change breaks rendering, product links, search/filter, or responsiveness:
+- Revert only the last change.
+- Do not rebuild the whole project.
+- Preserve product data and product URLs.
+- Restore from the previous working static version.
+
+STOP CONDITIONS:
+Stop and report clearly if:
+- Required files are missing.
+- Product data cannot be found.
+- Base44 cannot preserve static file structure.
+- A requested feature requires backend secrets in frontend.
+- A requested live AI/API feature cannot be implemented safely.
+- Validation fails and cannot be repaired without a larger rewrite.
+
+FINAL OUTPUT REQUIRED FROM BASE44:
+- Polished working portfolio hub.
+- Live URL.
+- Confirmation of files changed.
+- Confirmation product links tested.
+- Confirmation responsive breakpoints tested.
+- Confirmation no auth wall blocks portfolio.
+- Confirmation no backend-only secrets were added.
+- Confirmation demo/live wording is accurate.
+
+Directive 1: Adapt the skill set to the task. Include full folder structure, program code, logic code, transition code, UI logic, UI code, and HTML/JSX where required. Preserve SSOT, prevent feature creep, and protect working systems.
