@@ -22,14 +22,27 @@
       <img class="logo-landscape" src="assets/logos/logo-landscape.png" alt="4P3X Verse™ — Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™" />
       <img class="logo-square" src="assets/logos/logo-square.png" alt="4P3X Verse™" />
     </a>
-    <nav aria-label="Primary navigation">
-      <a href="index.html#top">Home</a>
-      <a href="index.html#architecture">Architecture</a>
-      <a href="index.html#products">Products</a>
-      <a href="index.html#agent">AI Explainer</a>
-      <a href="index.html#relevance">Investors</a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#top">Home</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#products">Products</a>
+      <a href="#agent">AI Explainer</a>
+      <a href="#relevance">Investors</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- MOBILE NAV DRAWER -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#top">Home</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#products">Products</a>
+    <a href="#agent">AI Explainer</a>
+    <a href="#relevance">Investors</a>
+    <a href="docs/BASE44_HANDOFF_PROMPT.txt" target="_blank" rel="noopener noreferrer">Handoff Prompt</a>
+  </nav>
 
   <main id="top">
 
@@ -117,6 +130,13 @@
         </div>
       </div>
     </section>
+
+    <!-- BACK TO TOP (after products) -->
+    <div class="section-shell" style="padding-top:0;padding-bottom:1rem;">
+      <div class="back-to-top-wrap">
+        <a href="#top" aria-label="Back to top of page">↑ Back to top</a>
+      </div>
+    </div>
 
     <!-- CREATOR POSITIONING -->
     <section class="section-shell impact-section" aria-label="Creator positioning">
