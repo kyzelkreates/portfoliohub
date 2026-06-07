@@ -3,27 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CareerLink OS™ — 4P3X Verse Portfolio Case Study</title>
-  <meta name="description" content="A career guidance and support operating system showing how the base can become a user journey, progress, and support dashboard. Powered by 4P3X Intelligent AI — Created by Kyzel Kreates." />
+  <title>CareerLink OS™ &#8212; 4P3X Verse Portfolio Case Study</title>
+  <meta name="description" content="A career guidance and support operating system showing how the base can become a user journey, progress, and support dashboard. Powered by 4P3X Intelligent AI&#8482; Created by Kyzel Kreates&#8482;." />
   <link rel="icon" type="image/png" href="../assets/logos/logo-square.png" />
+  <link rel="apple-touch-icon" href="../assets/logos/logo-square.png" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
 
   <header class="site-header" role="banner">
     <a class="brand" href="../index.html" aria-label="4P3X Verse home">
-      <img class="logo-landscape" src="../assets/logos/logo-landscape.png" alt="4P3X Verse landscape logo" />
+      <img class="logo-landscape" src="../assets/logos/logo-landscape.png" alt="4P3X Verse landscape logo — Powered by 4P3X Intelligent AI Created by Kyzel Kreates" />
       <img class="logo-square"    src="../assets/logos/logo-square.png"    alt="4P3X Verse square logo" />
     </a>
-    <nav aria-label="Primary navigation">
+    <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="../index.html">Home</a>
       <a href="../index.html#architecture">Architecture</a>
       <a href="../index.html#products">Products</a>
       <a href="../index.html#agent">AI Explainer</a>
       <a href="../index.html#relevance">Investors</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#architecture">Architecture</a>
+    <a href="../index.html#products">Products</a>
+    <a href="../index.html#agent">AI Explainer</a>
+    <a href="../index.html#relevance">Investors</a>
+  </nav>
+
+  <!-- BACK BAR -->
   <div class="back-bar" role="navigation" aria-label="Breadcrumb navigation">
     <div class="back-bar-inner">
       <a class="back-link" href="../index.html#products">
@@ -32,14 +45,20 @@
         </svg>
         Back to all products
       </a>
-      <a class="button live" href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer">Open Live Product &uarr;</a>
+      <a class="button live" href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open CareerLink OS™ live deployed product in new tab">Open Live Product &#8599;</a>
     </div>
   </div>
 
   <main class="product-page-main">
 
+    <!-- SCREENSHOT HERO -->
     <div class="product-screenshot-hero">
-      <img src="../screenshots/careerlink.png" alt="Screenshot of CareerLink OS™ — live deployed homepage" />
+      <img
+        src="../screenshots/careerlink.png"
+        alt="Screenshot of CareerLink OS™ homepage &#8212; live deployed product"
+        width="1280" height="720"
+        onerror="this.style.display='none'; var d=document.createElement('div'); d.className='screenshot-pending'; d.innerHTML='&lt;p&gt;Screenshot pending &#8212; live product available via the button above&lt;/p&gt;&lt;p style=&quot;margin-top:.6rem;&quot;&gt;&lt;a href=&quot;https://4p3xaiclos.vercel.app/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; style=&quot;color:var(--gold);&quot;&gt;https://4p3xaiclos.vercel.app/ &#8599;&lt;/a&gt;&lt;/p&gt;'; this.parentElement.appendChild(d);"
+      />
       <div class="screenshot-overlay">
         <div class="screenshot-title-block">
           <span class="product-badge">Live deployed product</span>
@@ -47,16 +66,18 @@
           <p>Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™</p>
         </div>
         <div class="screenshot-cta">
-          <a class="button live" href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer">Open Live Product</a>
+          <a class="button live" href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer">Open Live Product &#8599;</a>
         </div>
       </div>
     </div>
 
-    <div class="demo-live-strip" role="note">
+    <!-- DEMO/LIVE STRIP -->
+    <div class="demo-live-strip" role="note" aria-label="Demo mode status">
       <span class="demo-badge">Demo Mode active</span>
-      <p>Demo Mode shows the product. Live Mode runs the product — once connected to a real backend, authentication, persistent records, and real-time sync.</p>
+      <p>Demo Mode shows the product. Live Mode runs the product &#8212; once connected to a real backend with authentication, persistent records, and real-time sync.</p>
     </div>
 
+    <!-- PRODUCT METADATA -->
     <div class="product-meta-bar" role="region" aria-label="Product metadata">
       <div class="meta-item">
         <div class="meta-label">Sector</div>
@@ -67,64 +88,79 @@
         <div class="meta-value">Career coaches, training providers, employability programmes, education providers, and job support organisations.</div>
       </div>
       <div class="meta-item">
-        <div class="meta-label">Demo proof</div>
+        <div class="meta-label">What it proves</div>
         <div class="meta-value">Shows modular guidance flows, dashboard logic, support pathway structure, and user-facing progression experiences.</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Live URL</div>
-        <div class="meta-value"><a href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer">View live site</a></div>
+        <div class="meta-value"><a href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer">View live site &#8599;</a></div>
       </div>
     </div>
 
-    <div class="product-content-grid" role="region" aria-label="Product case study">
+    <!-- FULL WRITE-UP -->
+    <div class="product-content-grid" role="region" aria-label="Product case study write-up">
+
       <div class="write-up-card">
         <h2>What it is</h2>
         <p>CareerLink OS™ demonstrates how the 4P3X architecture can power an employment support and career development platform — combining a coach/caseworker dashboard with a jobseeker activity PWA, AI-assisted guidance, and compliance tracking.</p>
       </div>
+
       <div class="write-up-card">
         <h2>Where it can be used</h2>
         <p>Employment support programmes, government-funded employability schemes, private career coaching practices, education providers, and job centres.</p>
       </div>
+
       <div class="write-up-card">
         <h2>Why it was built</h2>
         <p>Employment support organisations often lack structured digital tools to track jobseeker progress, evidence weekly hours, flag support risks, and report outcomes to funders. CareerLink OS™ demonstrates a structured solution.</p>
       </div>
+
       <div class="write-up-card">
         <h2>When it is useful</h2>
         <p>When employment coaches need to track client job-search activity, manage caseloads, evidence compliance, flag at-risk clients, and generate outcome reports for funders.</p>
       </div>
+
       <div class="write-up-card">
         <h2>Who it helps</h2>
         <p>Employment coaches, caseworkers, careers advisers, HR support teams, DWP-adjacent programme providers, and job-readiness support organisations.</p>
       </div>
+
       <div class="write-up-card">
         <h2>How it works</h2>
         <p>Features a Coach Dashboard for caseload management, progress tracking, and outcome reporting — plus a Jobseeker Activity PWA for logging applications, evidencing hours, completing tasks, and receiving AI-assisted career guidance.</p>
       </div>
+
       <div class="write-up-card full">
         <h2>Key features</h2>
-        <div class="features-grid"><span class="feature-tag">Coach/caseworker dashboard</span><span class="feature-tag">Jobseeker activity PWA</span><span class="feature-tag">Job-search evidence tracking</span><span class="feature-tag">Weekly hours compliance</span><span class="feature-tag">AI career guidance</span><span class="feature-tag">Caseload management</span></div>
+        <div class="features-grid" aria-label="Key feature tags"><span class="feature-tag">Coach/caseworker dashboard</span><span class="feature-tag">Jobseeker activity PWA</span><span class="feature-tag">Job-search evidence tracking</span><span class="feature-tag">Weekly hours compliance</span><span class="feature-tag">AI career guidance</span><span class="feature-tag">Caseload management</span></div>
       </div>
+
       <div class="write-up-card full">
         <h2>Architecture behind it</h2>
         <p>Refactored from the 4P3X base with employability-sector data model, coach/jobseeker split, compliance tracking logic, and AI guidance configuration.</p>
       </div>
+
       <div class="write-up-card full">
         <h2>Demo Mode to Live Mode pathway</h2>
         <p>Demo Mode runs with sample jobseekers and caseload data. Live Mode connects real user accounts, persistent case records, funder reporting exports, and compliance evidence systems.</p>
       </div>
+
       <div class="write-up-card">
         <h2>What it can become next</h2>
         <p>Could expand to include Universal Credit compliance modules, DWP reporting integrations, CV builder tools, employer connection pathways, and outcome payment tracking.</p>
       </div>
+
       <div class="write-up-card">
         <h2>Investor and employer relevance</h2>
         <p>Shows commercial awareness of the publicly funded employment support sector — a multi-billion pound market with clear digital transformation needs and measurable ROI for funders.</p>
       </div>
+
+
     </div>
 
+    <!-- BOTTOM CTA ROW -->
     <div class="product-cta-row" role="navigation" aria-label="Product action buttons">
-      <a class="button primary"   href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer">Open Live Product</a>
+      <a class="button primary"   href="https://4p3xaiclos.vercel.app/" target="_blank" rel="noopener noreferrer">Open Live Product &#8599;</a>
       <a class="button secondary" href="../index.html#products">Return to all products</a>
       <a class="button ghost"     href="../index.html#agent">Ask the portfolio AI</a>
     </div>
@@ -133,12 +169,40 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="footer-logo-wrap">
-      <img src="../assets/logos/logo-landscape.png" alt="4P3X Verse landscape logo" class="footer-logo" />
+      <img src="../assets/logos/logo-landscape.png" alt="4P3X Verse&#8482; landscape logo" class="footer-logo" />
     </div>
     <p class="footer-brand">4P3X Verse&#8482; &#8212; One Modular Architecture. Many AI-Powered Products.</p>
     <p>Powered by 4P3X Intelligent AI&#8482; &nbsp;&middot;&nbsp; Created by Kyzel Kreates&#8482;</p>
   </footer>
 
   <script src="../config/products.js"></script>
+  <script>
+    // Hamburger nav for product pages
+    document.addEventListener('DOMContentLoaded', function() {
+      var hb = document.getElementById('hamburger');
+      var mn = document.getElementById('mobileNav');
+      if (hb && mn) {
+        hb.addEventListener('click', function() {
+          var open = mn.classList.toggle('open');
+          hb.classList.toggle('open', open);
+          hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mn.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            mn.classList.remove('open');
+            hb.classList.remove('open');
+            hb.setAttribute('aria-expanded', 'false');
+          });
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && mn.classList.contains('open')) {
+            mn.classList.remove('open');
+            hb.classList.remove('open');
+            hb.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
