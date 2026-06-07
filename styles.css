@@ -1065,3 +1065,121 @@ p  { color: var(--silver); font-size: 0.97rem; }
 * { word-break: break-word; }
 img { max-width: 100%; height: auto; }
 pre, code { white-space: pre-wrap; word-break: break-all; }
+
+/* ══════════════════════════════════════
+   DIAGRAM BLOCKS — image integration pass
+   v3 — 10 branded diagrams
+   ══════════════════════════════════════ */
+
+.diagram-block {
+  margin: 2.8rem 0;
+}
+.diagram-block + .diagram-block { margin-top: 1.6rem; }
+
+.diagram-block__intro {
+  margin-bottom: 1.4rem;
+}
+.diagram-block__intro h3 {
+  color: var(--gold-light);
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  margin-bottom: 0.5rem;
+}
+.diagram-block__intro p {
+  font-size: 0.92rem;
+  color: var(--silver);
+  max-width: 780px;
+  line-height: 1.72;
+}
+
+.diagram-block__wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+.diagram-block__wrap:hover { border-color: var(--gold-dim); }
+
+.diagram-block__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: calc(var(--radius-lg) - 4px);
+  cursor: zoom-in;
+  transition: opacity .18s;
+}
+.diagram-block__img:hover { opacity: .93; }
+
+.diagram-block__caption {
+  margin-top: 0.75rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+/* Gateway hero diagram — wider, more prominent */
+.diagram-block--hero .diagram-block__wrap {
+  border-color: var(--gold-dim);
+  box-shadow: var(--glow-gold);
+}
+.diagram-block--hero .diagram-block__intro h3 {
+  font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+}
+
+/* Lightbox overlay for tap-to-zoom */
+.diagram-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(0,0,0,.92);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+}
+.diagram-lightbox.open { display: flex; }
+.diagram-lightbox img {
+  max-width: 100%;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 60px rgba(0,0,0,.8);
+  cursor: default;
+}
+.diagram-lightbox__close {
+  position: absolute;
+  top: 1rem; right: 1.2rem;
+  background: rgba(255,255,255,.1);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: .3rem .6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.diagram-lightbox__close:hover { background: rgba(255,255,255,.2); }
+
+/* Diagram grid for side-by-side on wide screens */
+.diagram-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 900px) {
+  .diagram-pair { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .diagram-block { margin: 2rem 0; }
+  .diagram-block__wrap { padding: 0.7rem; }
+  .diagram-block__caption { font-size: 0.7rem; }
+}
