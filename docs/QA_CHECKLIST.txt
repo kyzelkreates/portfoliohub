@@ -1,0 +1,66 @@
+4P3X VERSE™ PORTFOLIO HUB — FINAL QA CHECKLIST
+Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™
+
+PURPOSE
+Run this before publishing or pushing to GitHub/Vercel/Netlify/Base44.
+
+RESPONSIVE QA
+[ ] Test 320px mobile width.
+[ ] Test 375px iPhone width.
+[ ] Test 390px/414px mobile width.
+[ ] Test 768px tablet portrait.
+[ ] Test 1024px tablet/desktop transition.
+[ ] Test 1280px laptop.
+[ ] Test 1440px desktop.
+[ ] Test 1920px large desktop.
+[ ] Header does not overflow on mobile.
+[ ] Navigation wraps cleanly.
+[ ] Product cards stack correctly on mobile.
+[ ] No text escapes boxes.
+[ ] Buttons remain tappable and aligned.
+[ ] Hero section remains readable at all sizes.
+[ ] Product grid stays balanced on tablet and desktop.
+
+CONTENT QA
+[ ] Branding says “4P3X Intelligent AI™ Created by Kyzel Kreates™”.
+[ ] Kyzel Kreates™ includes ™ everywhere in branding.
+[ ] 4P3X Verse™ positioning is clear before product cards.
+[ ] The site explains base system → working products → future variants.
+[ ] Demo Mode and Live Mode are explained clearly.
+[ ] No unverified “world’s first” claims.
+[ ] Product URLs open correctly in a new tab.
+[ ] Each product explains what it does, who needs it, architecture proof, and live-ready pathway.
+[ ] Wording is confident but not arrogant.
+
+FUNCTIONAL QA
+[ ] Product cards render from config/products.js.
+[ ] Search/filter works.
+[ ] AI explainer buttons update the answer panel.
+[ ] Base44 handoff prompt link opens.
+[ ] No console errors.
+[ ] No missing CSS/JS assets.
+[ ] No broken internal anchor links.
+
+ACCESSIBILITY QA
+[ ] Text contrast is readable.
+[ ] Buttons and links have visible focus/hover states.
+[ ] Navigation has aria label.
+[ ] Product grid updates without breaking readability.
+[ ] Page has a useful title and meta description.
+[ ] Keyboard users can tab through links and buttons.
+
+BASE44 / BUILDER QA
+[ ] Do not rebuild the whole site unless explicitly instructed.
+[ ] Preserve config/products.js as the product SSOT.
+[ ] Do not duplicate product data into multiple files.
+[ ] Do not add fake backend completion claims.
+[ ] Do not hardcode secret keys.
+[ ] Do not add API keys into frontend code.
+[ ] If an AI agent is added, make it portfolio-native and bounded.
+[ ] If a backend is added, include demo/live separation and API config guard.
+
+FINAL ACCEPTANCE
+[ ] The site clearly presents the 4P3X Verse™ as one connected ecosystem.
+[ ] The user can understand the concept before opening demos.
+[ ] Investors/employers/funders can see the proof quickly.
+[ ] The portfolio looks professional, futuristic, responsive, and credible.
