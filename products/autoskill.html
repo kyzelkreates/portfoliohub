@@ -145,6 +145,23 @@
         <p>Demo Mode runs all training flows with sample employees and modules. Live Mode connects real employee records, HR systems, course authoring tools, and progress reporting backends.</p>
       </div>
 
+
+      <!-- DEMO → LIVE DIAGRAM -->
+      <div class="diagram-block write-up-card full" style="border:none;padding:0;">
+        <div class="diagram-block__intro">
+          <h2 style="color:var(--gold-light);font-size:1.05rem;margin-bottom:.6rem;">Demo Mode &#8594; Live Mode — visual pathway</h2>
+          <p style="font-size:.89rem;">Demo Mode shows the product. Live Mode runs the product. Each product has a clear pathway from working demo to live operational deployment.</p>
+        </div>
+        <div class="diagram-block__wrap">
+          <img class="diagram-block__img"
+               src="../assets/diagrams/09-demo-mode-to-live-mode.png"
+               alt="Demo Mode to Live Mode diagram showing demo data, transition layer, backend connection, API config guard, real users, persistent data, dashboards, reports, and operational use."
+               loading="lazy" width="1080" height="608"
+               onclick="openDiagram(this.src,this.alt)" />
+        </div>
+        <p class="diagram-block__caption">Demo Mode shows the product. Live Mode runs the product.</p>
+      </div>
+
       <div class="write-up-card">
         <h2>What it can become next</h2>
         <p>Could expand to include video lesson delivery, external LMS integration, certification management, franchise training consistency, and AI-powered competency assessment.</p>
@@ -202,6 +219,33 @@
           }
         });
       }
+    });
+  </script>
+
+  <div class="diagram-lightbox" id="diagramLightbox" role="dialog" aria-modal="true" aria-label="Diagram full view">
+    <button class="diagram-lightbox__close" id="diagramClose" aria-label="Close diagram">&times;</button>
+    <img id="diagramLightboxImg" src="" alt="" />
+  </div>
+  <script>
+    function openDiagram(src, alt) {
+      var lb=document.getElementById('diagramLightbox');
+      var img=document.getElementById('diagramLightboxImg');
+      img.src=src; img.alt=alt||'';
+      lb.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var lb=document.getElementById('diagramLightbox');
+      var btn=document.getElementById('diagramClose');
+      if(!lb) return;
+      function closeLb() {
+        lb.classList.remove('open');
+        document.body.style.overflow='';
+        document.getElementById('diagramLightboxImg').src='';
+      }
+      btn.addEventListener('click', closeLb);
+      lb.addEventListener('click', function(e){ if(e.target===lb) closeLb(); });
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape'&&lb.classList.contains('open')) closeLb(); });
     });
   </script>
 </body>
