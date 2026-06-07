@@ -1,69 +1,97 @@
-# 4P3X Verse™ Portfolio Hub Starter
+# 4P3X Verse™ — Portfolio Hub
 
-**4P3X Verse™ — One Modular Architecture. Many AI-Powered Products.**  
-**Powered by 4P3X Intelligent AI™ Created by Kyzel Kreates™**
+**One Modular Architecture. Many AI-Powered Products.**
 
-This is a static starter pack for the 4P3X Verse™ portfolio hub. It is designed to be imported into Base44, Manus, Super Agent, GitHub, Vercel, Netlify, or any static hosting setup.
+Powered by 4P3X Intelligent AI™ · Created by Kyzel Kreates™
 
-## What is included
+---
 
-- `index.html` — main portfolio homepage
-- `styles.css` — responsive futuristic 4P3X/Kyzel Kreates™ visual system
-- `app.js` — product rendering, search/filter, and lightweight AI explainer panel
-- `config/products.js` — single configurable product data file
-- `docs/BASE44_HANDOFF_PROMPT.txt` — copy-paste Base44 finishing prompt
-- `docs/QA_CHECKLIST.txt` — final responsive and validation checklist
+## What this is
 
-## Build purpose
+The 4P3X Verse™ Portfolio Hub is a deployed-product showcase for the 4P3X modular AI-assisted product ecosystem.
 
-This pack explains the 4P3X Verse™ as one connected modular architecture, not a random group of apps. It includes the current deployed products/demos and positions them as proof of:
+It demonstrates how one reusable software base has been adapted into 11 sector-ready product demonstrations — across healthcare, fleet operations, employment support, wellbeing, education, compliance, reputation management, and more.
 
-- reusable modular software architecture
-- dashboard and PWA product patterns
-- controlled refactoring across sectors
-- demo/live mode switching
-- backend-ready pathways
-- AI-assisted engineering and product thinking
-- portfolio, investor, employer, and partner readiness
+> "A working demonstration of reusable AI-powered software architecture — one base, many AI-powered products."
 
-## How to use in Base44
+---
 
-1. Upload/import the folder or zip.
-2. Tell Base44 to read `docs/BASE44_HANDOFF_PROMPT.txt` first.
-3. Preserve the product data file as the single source of product truth.
-4. Improve polish, routing, deployment wiring, and optional AI/backend features without rebuilding the whole project.
-5. Run the QA checklist before publishing.
+## 11 Live Deployed Products
 
-## Product data
+| Product | Sector | Live URL |
+|---|---|---|
+| 4P3X Base Core | Reusable modular base | https://basev0.vercel.app/ |
+| TherapyLink™ | Therapy & care coordination | https://therapylinkos.vercel.app/4p3x_carelink/ap3x/demo/index.html |
+| AutoSkill OS™ | Employee training | https://autoskillos.vercel.app/ap3x/demo/index.html |
+| Big V's Best Routes™ Fleet OS | Fleet routing & safety | https://bigvsfleetos.vercel.app/ |
+| ResponseLink OS™ | Community welfare response | https://responselinkosv1.vercel.app/ |
+| CareerLink OS™ | Career support & employment | https://4p3xaiclos.vercel.app/ |
+| Recharge Burnout Recovery™ | Wellbeing & burnout recovery | https://burnout-mh.vercel.app/ap3x/companion/index.html |
+| Four Paws Academy™ | Pet training LMS | https://fourpawsdemo.vercel.app/ap3x/demo/index.html#deploy |
+| Quantum Compliance OS™ | Quantum-readiness & compliance | https://4p3xaiqc.netlify.app/ |
+| TrustShield OS™ | Reputation & crisis management | https://4p3xaitsos.netlify.app/#/welcome |
+| Kyzel Clarity AI™ | AI portfolio explanation agent | https://kyzelclarityai.vercel.app/ |
 
-Update product cards in:
+---
 
-```text
-config/products.js
+## Project Structure
+
+```
+4p3x-verse-portfolio-hub/
+├── index.html              ← Main portfolio hub homepage
+├── styles.css              ← Global styles (responsive, all breakpoints)
+├── app.js                  ← Product grid, search, AI explainer
+├── config/
+│   └── products.js         ← SSOT — all product data lives here only
+├── products/
+│   ├── base-core.html
+│   ├── therapylink.html
+│   ├── autoskill.html
+│   ├── bigvs-fleet.html
+│   ├── responselink.html
+│   ├── careerlink.html
+│   ├── recharge-burnout.html
+│   ├── fourpaws.html
+│   ├── quantum-compliance.html
+│   ├── trustshield.html
+│   └── kyzel-clarity.html
+├── screenshots/
+│   └── *.png               ← Homepage screenshots of all 11 live products
+├── assets/
+│   └── logos/
+│       ├── logo-landscape.png
+│       └── logo-square.png
+└── docs/
+    ├── BASE44_HANDOFF_PROMPT.txt
+    └── QA_CHECKLIST.txt
 ```
 
-Do not hardcode product details into several different files. Keep the product list configurable so the portfolio can grow as more 4P3X Verse™ products are added.
+---
+
+## Architecture Principle
+
+**Demo Mode shows the product. Live Mode runs the product.**
+
+Layer 01 — Reusable base structure  
+Layer 02 — Sector-specific product variants  
+Layer 03 — Live backend-connected deployment  
+
+---
 
 ## Deployment
 
-This starter can run as a static site. Open `index.html` locally or deploy the full folder to Vercel/Netlify/static hosting.
+This is a static HTML/CSS/JS site — deployable to any static host:
 
-## Important positioning
+- **Vercel**: connect repo, deploy with zero config
+- **Netlify**: drag-and-drop the folder or connect the repo
+- **GitHub Pages**: enable pages from the repo root
 
-Use this wording consistently:
-
-> The 4P3X Verse™ is designed to demonstrate one reusable modular software base that can be adapted into many different sector-specific products. Demo Mode shows the product. Live Mode runs the product.
-
-Avoid unverified claims such as “world’s first.” Use safer wording such as:
-
-- “A first-of-its-kind modular AI-assisted product architecture”
-- “One Modular Architecture. Many AI-Powered Products.”
-- “One Base Architecture. Hundreds of Possible Product Directions.”
+---
 
 ## Branding
 
-Always use:
+- 4P3X Verse™
+- 4P3X Intelligent AI™
+- Created by Kyzel Kreates™
 
-**4P3X Intelligent AI™ Created by Kyzel Kreates™**
-
-Never remove the ™ from Kyzel Kreates™ in branding contexts.
+All trademarks are property of their respective creators.
