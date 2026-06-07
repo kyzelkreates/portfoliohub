@@ -26,7 +26,7 @@ It demonstrates how one reusable software base has been adapted into 11 sector-r
 | Big V's Best Routes™ Fleet OS | Fleet routing & safety | https://bigvsfleetos.vercel.app/ |
 | ResponseLink OS™ | Community welfare response | https://responselinkosv1.vercel.app/ |
 | CareerLink OS™ | Career support & employment | https://4p3xaiclos.vercel.app/ |
-| Recharge Burnout Recovery™ | Wellbeing & burnout recovery | https://burnout-mh.vercel.app/ap3x/companion/index.html |
+|  Burnout Recovery OS™ | Wellbeing & burnout recovery | https://burnoutrecoveryos.vercel.app/ |
 | Four Paws Academy™ | Pet training LMS | https://fourpawsdemo.vercel.app/ap3x/demo/index.html#deploy |
 | Quantum Compliance OS™ | Quantum-readiness & compliance | https://4p3xaiqc.netlify.app/ |
 | TrustShield OS™ | Reputation & crisis management | https://4p3xaitsos.netlify.app/#/welcome |
