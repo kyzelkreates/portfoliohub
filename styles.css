@@ -1183,3 +1183,10 @@ pre, code { white-space: pre-wrap; word-break: break-all; }
   .diagram-block__wrap { padding: 0.7rem; }
   .diagram-block__caption { font-size: 0.7rem; }
 }
+
+/* ═══ SAFETY RULE — hide any stray ')" /> text if it ever appears ═══
+   Belt-and-braces: targets the thumb container as a fallback.
+   The actual onerror bug is already fixed in app.js.             */
+.product-card-thumb > *:not(img):not(span) {
+  display: none !important;
+}
